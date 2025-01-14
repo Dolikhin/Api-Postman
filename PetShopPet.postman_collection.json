@@ -1,0 +1,175 @@
+{
+	"info": {
+		"_postman_id": "a06930b5-2fa4-4de2-b216-7cba4a90904b",
+		"name": "PetShopPet",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25183777"
+	},
+	"item": [
+		{
+			"name": "Create Pet",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 228,\r\n  \"category\": {\r\n    \"id\": 2,\r\n    \"name\": \"Bull dog\"\r\n  },\r\n  \"name\": \"Canabis\",\r\n  \"photoUrls\": [\r\n    \"string\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 0,\r\n      \"name\": \"string\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "petstore.swagger.io/v2/pet",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"pet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Pet with parameters (NO WORK)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "petstore.swagger.io/v2/pet/228?name=Smily&status=avaible&petId=228",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"pet",
+						"228"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Smily"
+						},
+						{
+							"key": "status",
+							"value": "avaible"
+						},
+						{
+							"key": "petId",
+							"value": "228"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get pet by id 228",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "petstore.swagger.io/v2/pet/{{BulldogId}}",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"pet",
+						"{{BulldogId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pet update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 228,\r\n  \"category\": {\r\n    \"id\": 2,\r\n    \"name\": \"Bull dog\"\r\n  },\r\n  \"name\": \"Smily\",\r\n  \"photoUrls\": [\r\n    \"string\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 0,\r\n      \"name\": \"string\"\r\n    }\r\n  ],\r\n  \"status\": \"pending\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "petstore.swagger.io/v2/pet/",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"pet",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "petstore.swagger.io/v2/pet/228",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"pet",
+						"228"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "BulldogId",
+			"value": "228"
+		}
+	]
+}

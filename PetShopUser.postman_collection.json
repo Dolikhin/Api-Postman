@@ -1,0 +1,278 @@
+{
+	"info": {
+		"_postman_id": "7ee2c8b4-ca1c-46ea-a378-cb357cfea836",
+		"name": "PetShopUser",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25183777"
+	},
+	"item": [
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n  {\r\n    \"id\": 5,\r\n    \"username\": \"Meteoritto\",\r\n    \"firstName\": \"Love\",\r\n    \"lastName\": \"Tortle\",\r\n    \"email\": \"LOve.tortle@gmail.com\",\r\n    \"password\": \"TORTLE\",\r\n    \"phone\": \"541122255533\",\r\n    \"userStatus\": 1\r\n  }\r\n]",
+					"options": {
+						"raw": {
+							"language": "javascript"
+						}
+					}
+				},
+				"url": {
+					"raw": "petstore.swagger.io/v2/user/createWithArray",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"user",
+						"createWithArray"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "petstore.swagger.io/v2/user/Meteoritto",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"user",
+						"Meteoritto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update user",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 5,\r\n  \"username\": \"Mario\",\r\n  \"firstName\": \"Busy\",\r\n  \"lastName\": \"Clusy\",\r\n  \"email\": \"BusyClusy@gmail.com\",\r\n  \"password\": \"password\",\r\n  \"phone\": \"666\",\r\n  \"userStatus\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "petstore.swagger.io/v2/user/Meteoritto",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"user",
+						"Meteoritto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find user Mario",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "petstore.swagger.io/v2/user/Mario",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"user",
+						"Mario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Mario",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "petstore.swagger.io/v2/user/Mario",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"user",
+						"Mario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find user Mario Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "petstore.swagger.io/v2/user/Mario",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"user",
+						"Mario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n  {\r\n    \"id\": 6,\r\n    \"username\": \"Batmen\",\r\n    \"firstName\": \"Bruce\",\r\n    \"lastName\": \"Wayne\",\r\n    \"email\": \"whoisbatmen@notme.com\",\r\n    \"password\": \"Jocker\",\r\n    \"phone\": \"Bat signal\",\r\n    \"userStatus\": 1\r\n  }\r\n]",
+					"options": {
+						"raw": {
+							"language": "javascript"
+						}
+					}
+				},
+				"url": {
+					"raw": "petstore.swagger.io/v2/user/createWithArray",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"user",
+						"createWithArray"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Meteoritto",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "petstore.swagger.io/v2/user/login?username=Batmen&password=Jocker",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"user",
+						"login"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "Batmen"
+						},
+						{
+							"key": "password",
+							"value": "Jocker"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout Meteoritto",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "petstore.swagger.io/v2/user/logout",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"user",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Meteoritto",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "petstore.swagger.io/v2/user/Batmen",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"user",
+						"Batmen"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find user Batmen",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "petstore.swagger.io/v2/user/Batmen",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"user",
+						"Batmen"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

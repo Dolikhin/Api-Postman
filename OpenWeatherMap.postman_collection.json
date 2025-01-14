@@ -1,0 +1,195 @@
+{
+	"info": {
+		"_postman_id": "f495eb70-e43e-43d9-835f-71c8e6127169",
+		"name": "OpenWeatherMap",
+		"description": "StartFragment\n\nЭта коллекция создана для тестирования API OpenWeatherMap и охватывает следующие аспекты:\n\n- Проверка успешных и ошибочных запросов.\n    \n- Тестирование различных методов: `GET`, `POST`, `PUT`, `DELETE` (где это возможно).\n    \n- Валидация правильности данных и обработки ошибок.\n    \n\nEndFragment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25183777"
+	},
+	"item": [
+		{
+			"name": "Получение текущей погоды успешный",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "{{vault:openweather-api-api-key:value}}",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "appid",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.openweathermap.org/data/2.5/weather?q=London&appid={{vault:openweather-api-api-key:value}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "London"
+						},
+						{
+							"key": "appid",
+							"value": "{{vault:openweather-api-api-key:value}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение текущей погоды негативный",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.openweathermap.org/data/2.5/weather?q=London&appid=3396e9d194aacab0bd52e825490776444",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "London"
+						},
+						{
+							"key": "appid",
+							"value": "3396e9d194aacab0bd52e825490776444"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение прогноза погоды успешно",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.openweathermap.org/data/2.5/forecast?q=Moscow&appid=3396e9d194aacab0bd52e825490776fb",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"forecast"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "Moscow"
+						},
+						{
+							"key": "appid",
+							"value": "3396e9d194aacab0bd52e825490776fb"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение прогноза погоды неудачно",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.openweathermap.org/data/2.5/forecast?q=Новгород1&appid=3396e9d194aacab0bd52e825490776fb",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"forecast"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "Новгород1"
+						},
+						{
+							"key": "appid",
+							"value": "3396e9d194aacab0bd52e825490776fb"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение погоды по координатам",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.openweathermap.org/data/2.5/weather?lat=40.7128&lon=-74.0060&appid=3396e9d194aacab0bd52e825490776fb",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "40.7128"
+						},
+						{
+							"key": "lon",
+							"value": "-74.0060"
+						},
+						{
+							"key": "appid",
+							"value": "3396e9d194aacab0bd52e825490776fb"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
